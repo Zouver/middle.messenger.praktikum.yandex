@@ -20,6 +20,6 @@ export default defineConfig({
   build: {outDir},
   plugins: [handlebars({
     context: (pagePath: string) => pageData[pagePath],
-    partialDirectory: resolve(srcDir,'./components'),
+    partialDirectory: resolve(srcDir,'./partials'),
   })],
 })

@@ -1,0 +1,44 @@
+
+.text-color-default{
+    color: var(--gray-30);
+}
+
+.text-color-secondary{
+    color: var(--gray-150);
+}
+
+.text-color-critical{
+    color: var(--critical);
+}
+
+.text-color-primary{
+    color: var(--primary);
+}
+
+.label {
+    font-weight: 500;
+    font-size: 0.5625rem; /* 9px */
+    line-height: 0.5625rem;
+}
+
+.text {
+    font-size: 0.75rem; /* 12px */
+    line-height: 0.9375rem; /* 15px */
+}
+
+.title {
+    font-size: 0.8125rem; /* 13px */
+    line-height: 0.8125rem;
+}
+
+.heading {
+    font-size: 1.25rem; /* 20px */
+    line-height: 1.25rem;
+}
+
+.display {
+    font-size: 2.5rem; /* 40px */
+    line-height: 2.5rem;
+}
+
+

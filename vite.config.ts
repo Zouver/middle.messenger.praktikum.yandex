@@ -33,4 +33,7 @@ export default defineConfig({
     context: (pagePath: string) => pageData[pagePath],
     partialDirectory: resolve(srcDir,'./components'),
   })],
+  preview:{
+    port: 3000
+  }
 })

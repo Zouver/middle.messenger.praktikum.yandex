@@ -1,0 +1,25 @@
+<section id="selected-chat">
+    <div id="selected-chat-header">
+        <div id="selected-chat-avatar"></div>
+        {{> text-title color="default" text="Вадим"}}
+    </div>
+    <hr/>
+    <div id="selected-chat-content">
+        {{#each messages}}
+            {{>
+                widget-message
+                    initiator=initiator
+                    message=message
+                    picture=picture
+                    status=status
+                    time=time
+            }}
+        {{/each}}
+    </div>
+    <hr />
+    <div id="selected-chat-panel">
+        {{> button-icon type="transparent" icon="fa-solid fa-paperclip"}}
+        {{> input-dialog placeholder="Сообщение"}}
+        {{> button-icon type="primary" icon="fa-solid fa-arrow-right"}}
+    </div>
+</section>

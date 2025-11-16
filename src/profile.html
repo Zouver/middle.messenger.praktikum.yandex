@@ -1,0 +1,33 @@
+{{#> html }}
+    <main class="profile-layout">
+        {{> widget-profile-nav}}
+        <div class="profile-wrapper">
+            <div class="profile-content">
+                <div class="profile-header">
+                    <div class="profile-picture">
+                        <i class="fa-regular fa-image"></i>
+                    </div>
+                    {{>
+                        text-heading
+                            text ="Иван"
+                            color="default"
+                    }}
+                </div>
+                <div class="profile-information key-value-list">
+                    {{# each profileInformations}}
+                        <div class="key-value-item">
+                            <div class="key">{{> text text=key color="default" }}</div>
+                            <div class="value">{{> text text=value color="secondary" }}</div>
+                        </div>
+                        <hr/>
+                    {{/each}}
+                </div>
+                <div class="profile-actions">
+                    <a href="">{{> text text="Изменить данные" color="primary"}}</a><hr/>
+                    <a href="">{{> text text="Изменить пароль" color="primary"}}</a><hr/>
+                    <a href="">{{> text text="Выйти" color="critical"}}</a>
+                </div>
+            </div>
+        </div>
+    </main>
+{{/html}}

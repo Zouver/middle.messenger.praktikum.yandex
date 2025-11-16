@@ -22,7 +22,7 @@ const message1: IMessage<"companion", "text"> = {
 	initiator: "companion",
 	time: "11:56",
 	type: "text",
-}
+};
 
 const message12: IMessage<"self", "text"> = {
 	message: "Привет! Смотри, тут всплыл интересный кусок лунной космической истории — " +
@@ -36,7 +36,7 @@ const message12: IMessage<"self", "text"> = {
 	time: "11:56",
 	type: "text",
 	statusIcon: "fa-clock"
-}
+};
 
 
 const message2: IMessage<"companion", "picture" > = {
@@ -44,7 +44,7 @@ const message2: IMessage<"companion", "picture" > = {
 	type: "picture",
 	picture: "/camera.png",
 	time: "11:56",
-}
+};
 
 const message3: IMessage<"self", "text" > = {
 	initiator: "self",
@@ -52,11 +52,11 @@ const message3: IMessage<"self", "text" > = {
 	message: "Круто!",
 	time: "12:00",
 	statusIcon: "fa-check-double"
-}
+};
 
 export const messages: IMessage[] = [
 	message1,
 	message2,
 	message12,
 	message3
-]
+];

@@ -5,7 +5,11 @@
 ![Handlebars](https://img.shields.io/badge/Handlebars-4.x-orange?logo=handlebarsdotjs)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-blueviolet)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b6697f2d-0522-4c0c-ad13-f51fe6cc31e0/deploy-status)](https://app.netlify.com/projects/verdant-concha-6bcabc/deploys)
 
+
+## Netlify
+> https://verdant-concha-6bcabc.netlify.app/
 
 ## 🔗 Pull Request
 > [Ссылка на PR →](https://github.com/Zouver/middle.messenger.praktikum.yandex/pull/1)

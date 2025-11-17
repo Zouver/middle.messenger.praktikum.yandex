@@ -4,39 +4,28 @@
         <div class="profile-wrapper">
             <div class="profile-content">
                 <div class="profile-header">
-                    <form class="profile-picture" onclick="document.getElementById('avatar').click()">
-                        <div class="layout">
-                            {{>
-                                text
-                                    text ="Поменять аватар"
-                                    color="on-dark"
-                            }}
-                        </div>
+                    <div class="profile-picture">
                         <i class="fa-regular fa-image"></i>
                         <input type="file" id="avatar" name="avatar" accept="image/*" />
-                    </form>
+                    </div>
                     {{>
                         text-heading
                             text ="Иван"
                             color="default"
                     }}
                 </div>
-                <div class="profile-information">
+                <form class="profile-information">
                     <div class="key-value-list">
                         {{# each profileInformations}}
                             <div class="key-value-item">
                                 <div class="key">{{> text text=key color="default" }}</div>
-                                <div class="value">{{> text text=value color="secondary" }}</div>
+                                <input name="{{name}}" class="value" value="{{value}}" />
                             </div>
                             {{#if @last}}{{else}}<hr/>{{/if}}
                         {{/each}}
                     </div>
-                </div>
-                <div class="profile-actions">
-                    <a href="/change-profile">{{> text text="Изменить данные" color="primary"}}</a><hr/>
-                    <a href="/change-password">{{> text text="Изменить пароль" color="primary"}}</a><hr/>
-                    <a href="">{{> text text="Выйти" color="critical"}}</a>
-                </div>
+                    {{> form-button variant="primary" type="submit" value="Сохранить"}}
+                </form>
             </div>
         </div>
     </main>

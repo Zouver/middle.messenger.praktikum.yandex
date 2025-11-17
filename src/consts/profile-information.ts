@@ -1,15 +1,34 @@
+import type {IKeyValueItem} from "./types.ts";
 
-
-export interface IProfileInformation {
-	key: string;
-	value: string;
-}
-
-export const profileInformations: IProfileInformation[] = [
-	{ key: "Почта", value: "pochta@yandex.ru" },
-	{ key: "Логин", value: "ivanivanov" },
-	{ key: "Имя", value: "Иван" },
-	{ key: "Фамилия", value: "Иванов" },
-	{ key: "Имя в чате", value: "Иван" },
-	{ key: "Телефон", value: "+7 (909) 967 30 30" },
+export const profileInformations: IKeyValueItem[] = [
+	{
+		key: "Почта",
+		value: "pochta@yandex.ru",
+		name: "email"
+	},
+	{
+		key: "Логин",
+		value: "ivanivanov",
+		name: "login"
+	},
+	{
+		key: "Имя",
+		value: "Иван",
+		name: "first_name"
+	},
+	{
+		key: "Фамилия",
+		value: "Иванов",
+		name: "second_name"
+	},
+	{
+		key: "Имя в чате",
+		value: "Иван",
+		name: "display_name"
+	},
+	{
+		key: "Телефон",
+		value: "+7 (909) 967 30 30",
+		name: "phone"
+	},
 ];

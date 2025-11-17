@@ -40,7 +40,7 @@
     width: 100%;
 }
 
-.form-input input {
+input {
     border: none;
     outline: none;
     width: 100%;
@@ -90,7 +90,8 @@
 .button{
     cursor: pointer;
     border: none;
-    padding: 12px 4px;
+    padding: 8px 24px;
+    width: max-content;
     border-radius: 8px;
 }
 
@@ -406,14 +407,40 @@ a{
     align-items: center;
 }
 
+.profile-picture input[type="file"] {
+    position: relative;
+    display: none;
+}
+
+
 .profile-picture i{
     font-size: 40px;
     color: rgb(205, 205, 205);
 }
 
-.key-value-list{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+
+.layout{
+    position: absolute;
+    background: rgba(0,0,0,0);
+    transition: background-color .18s ease, opacity .18s ease, transform .12s ease;
+    opacity: 0;
+    pointer-events: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+}
+
+.profile-picture:hover .layout,
+.profile-picture:focus .layout {
+    background: rgba(0,0,0,0.35);
+    opacity: 1;
+    pointer-events: auto;
+    transform: none;
 }
 
 .key-value-list {
@@ -435,7 +462,10 @@ a{
     .value {
         text-align: right;
         flex: 1;
+        color: var(--gray-150);
+
     }
+
 }
 
 .profile-actions{
@@ -449,3 +479,15 @@ a{
     display: flex;
     gap: 1em;
 }
+
+.profile-information{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3em;
+}
+
+.profile-information .key-value-list{
+    width: 100%;
+}
+

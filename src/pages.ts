@@ -1,6 +1,7 @@
 import {chats} from "./consts";
 import {messages} from "./consts/messages.ts";
 import {profileInformations} from "./consts/profile-information.ts";
+import {changePasswordInputs} from "./consts/change-password-inputs.ts";
 
 export interface IPage {
 	url: string;
@@ -39,6 +40,16 @@ export const pages: IPage[] = [
 		title: 'Error 505',
 		errorCode: "500",
 		errorContent: "Мы уже фиксим"
+	},
+	{
+		url: "/change-profile.html",
+		title: 'Change profile',
+		profileInformations: profileInformations,
+	},
+	{
+		url: "/change-password.html",
+		title: 'Change password',
+		passwordChangeForm: changePasswordInputs
 	}
 ];
 

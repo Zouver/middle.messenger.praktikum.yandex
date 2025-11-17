@@ -1,10 +1,10 @@
 <section id="selected-chat">
-    <div id="selected-chat-header">
+    <header id="selected-chat-header">
         <div id="selected-chat-avatar"></div>
         {{> text-title color="default" text="Вадим"}}
-    </div>
+    </header>
     <hr/>
-    <div id="selected-chat-content">
+    <main id="selected-chat-content">
         {{#each messages}}
             {{>
                 widget-message
@@ -15,11 +15,11 @@
                     time=time
             }}
         {{/each}}
-    </div>
+    </main>
     <hr />
-    <div id="selected-chat-panel">
+    <form id="selected-chat-panel">
         {{> button-icon type="transparent" icon="fa-solid fa-paperclip"}}
-        {{> input-dialog placeholder="Сообщение"}}
+        {{> input-dialog name="message" placeholder="Сообщение"}}
         {{> button-icon type="primary" icon="fa-solid fa-arrow-right"}}
-    </div>
+    </form>
 </section>

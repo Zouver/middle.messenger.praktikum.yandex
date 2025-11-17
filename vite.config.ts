@@ -5,17 +5,17 @@ import { resolve } from 'path';
 // @ts-expect-error
 import handlebars from 'vite-plugin-handlebars';
 
-import {pageData} from "./src/pages.ts";
+import {getPageData} from "./src/pages.ts";
+const pageData = getPageData();
 
 
 function getInput() {
   const input: Record<string, string> = {}
-
   Object.keys(pageData).forEach((key, index) => {
-    input[index.toString()] = resolve(srcDir, key)
+    input[index.toString()] = resolve(srcDir, key);
   })
 
-  return input
+  return input;
 }
 
 const srcDir = resolve(__dirname, 'src');

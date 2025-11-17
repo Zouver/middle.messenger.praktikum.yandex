@@ -1,6 +1,3 @@
-
-
-
 .auth-layout{
     display: flex;
     align-items: center;
@@ -444,4 +441,11 @@ a{
 .profile-actions{
     display: flex;
     flex-direction: column;
+}
+
+
+.main-menu ul {
+    list-style-type: none;
+    display: flex;
+    gap: 1em;
 }

@@ -36,7 +36,7 @@ export const pages: IPage[] = [
 		errorContent: "Не туда попали"
 	},
 	{
-		url: "error-500.html",
+		url: "/error-500.html",
 		title: 'Error 505',
 		errorCode: "500",
 		errorContent: "Мы уже фиксим"

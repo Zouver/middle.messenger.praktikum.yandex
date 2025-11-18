@@ -1,0 +1,18 @@
+<div class="auth-widget">
+    {{> text-heading text="Регистрация" color="default"}}
+    <form class="auth-form">
+        <div class="form-group">
+            {{> form-input value="" placeholder="Почта" type="email" name="email"}}
+            {{> form-input value="" placeholder="Логин" type="text" name="login"}}
+            {{> form-input value="" placeholder="Имя" type="text" name="first_name"}}
+            {{> form-input value="" placeholder="Фамилия" type="text" name="second_name"}}
+            {{> form-input value="" placeholder="Телефон" type="tel" name="phone"}}
+            {{> form-input value="" placeholder="Пароль" type="password" name="password"}}
+            {{> form-input value="" placeholder="Пароль (еще раз)" type="password" name="password_submit"}}
+        </div>
+        <div class="button-group">
+            {{> form-button value="Зарегистрироваться" variant="primary" type="submit"}}
+            {{> form-button value="Войти" variant="transparent"}}
+        </div>
+    </form>
+</div>

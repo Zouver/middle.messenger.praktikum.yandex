@@ -1,7 +1,7 @@
 import {Component} from "@/lib";
 import {Text} from "@components/shared";
 
-import {getContentByStatusCode} from "./config";
+import {getContentByStatusCode} from "./consts";
 import {errorPageTemplate} from "./error.template.ts";
 
 import type {ErrorPageProps} from "./error.props.ts";

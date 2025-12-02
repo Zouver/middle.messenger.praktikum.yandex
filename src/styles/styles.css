@@ -40,3 +40,13 @@ hr{
 button {
   box-sizing: border-box;
 }
+
+#app{
+  width: 100%;
+}
+
+a{
+  color: var(--primary);
+  text-decoration: none;
+}
+

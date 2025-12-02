@@ -1,7 +1,7 @@
 import {Input} from "@components/shared";
 
 import type {InputProps} from "@components/shared/input";
-import './input-form.scss';
+import './input-form.css';
 
 export class InputForm extends Input{
 	constructor(props: InputProps) {

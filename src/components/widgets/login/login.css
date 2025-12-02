@@ -1,0 +1,19 @@
+.auth-widget{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    max-width: 340px;
+    min-height: 460px;
+}
+
+
+
+.auth-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    gap: 48px;
+    flex: 1;
+}

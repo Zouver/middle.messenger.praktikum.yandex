@@ -14,6 +14,7 @@ export default defineConfig([
       importPlugin.flatConfigs.recommended,
     ],
     rules: {
+      "semi": ["error", "always"],
       "@typescript-eslint/no-this-alias": "off",
       "@typescript-eslint/no-unused-vars": "off",
       "import/order": [

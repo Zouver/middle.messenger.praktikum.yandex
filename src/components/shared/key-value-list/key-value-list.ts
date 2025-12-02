@@ -3,7 +3,7 @@ import {Component} from "@/lib";
 import {keyValueListTemplate} from "./key-value-list.template.ts";
 
 import type { KeyValueListProps} from "./key-value-list.props.ts";
-import './key-value-list.css'
+import './key-value-list.css';
 
 export class KeyValueList extends Component<KeyValueListProps> {
 

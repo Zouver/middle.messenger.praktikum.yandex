@@ -1,4 +1,4 @@
-import {type BaseProps} from '@/lib'
+import {type BaseProps} from '@/lib';
 import {Text, TextLabel} from "@components/shared";
 
 export type Initiator = "self" | "companion"

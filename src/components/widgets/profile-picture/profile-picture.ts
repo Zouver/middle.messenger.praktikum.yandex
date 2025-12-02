@@ -3,7 +3,7 @@ import {Component} from "@/lib";
 import {profilePictureTemplate} from "./profile-picture.template.ts";
 
 import type {ProfilePictureProps} from "./profile-picture.props.ts";
-import './profile-picture.css'
+import './profile-picture.css';
 
 export class ProfilePicture extends Component<ProfilePictureProps> {
 	constructor(props: ProfilePictureProps) {

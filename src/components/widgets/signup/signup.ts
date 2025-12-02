@@ -8,7 +8,7 @@ import type {SignupProps} from "@components/widgets/signup/signup.props.ts";
 export class Signup extends Component<SignupProps> {
 	constructor(props: SignupProps = {}) {
 		const heading = props.heading || headingDefault;
-		const inputs = props.inputs || inputDefault
+		const inputs = props.inputs || inputDefault;
 		const buttons = props.buttons || buttonsDefault;
 
 		super(

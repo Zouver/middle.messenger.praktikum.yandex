@@ -1,4 +1,4 @@
-import {type BaseProps} from '@/lib'
+import {type BaseProps} from '@/lib';
 import {Text} from "@components/shared";
 
 export interface ProfilePictureProps extends BaseProps{

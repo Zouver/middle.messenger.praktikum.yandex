@@ -29,7 +29,7 @@ export const inputDefault: InputForm[] = inputs.map(input => new InputForm({
 export const buttonsDefault = [
 	new Button({text: "Зарегистрироваться", variant: "primary", type: "submit"}),
 	new Button({text: "Войти", variant: "transparent"})
-]
+];
 
 export const headingDefault = new TextHeading({
 	text: "Регистрация",

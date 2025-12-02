@@ -3,7 +3,7 @@ import {Component} from "@/lib";
 import {messageTemplate} from "./message.template.ts";
 
 import type {MessageProps} from "./message.props.ts";
-import './message.css'
+import './message.css';
 
 export class Message extends Component<MessageProps> {
 	constructor(props: MessageProps) {

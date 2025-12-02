@@ -4,6 +4,6 @@ export const errorPageTemplate = `
       {{{ errorCode }}}
       {{{ errorContent }}}
     </div>
-    <a href="/index.html">{{{ backButton }}}</a>
+    <a href="/">{{{ backButton }}}</a>
 `;
 

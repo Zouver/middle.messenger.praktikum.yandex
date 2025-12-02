@@ -21,7 +21,7 @@ export class Component<TProps extends BaseProps = BaseProps> extends BaseCompone
 		const {props: _props, children} = this._getChildren(props);
 		this.children = children;
 		this.props = this._makePropsProxy({..._props, __id: this._id });
-		this.events = this.props.events || {}
+		this.events = this.props.events || {};
 
 
 		this._id = makeUUID();
@@ -79,7 +79,7 @@ export class Component<TProps extends BaseProps = BaseProps> extends BaseCompone
 		if(attributes && this._element){
 			Object.entries(attributes).forEach(([key, value]) => {
 				this._element?.setAttribute(key, value);
-			})
+			});
 		}
 	}
 
@@ -122,8 +122,8 @@ export class Component<TProps extends BaseProps = BaseProps> extends BaseCompone
 		this._manageEvents();
 		this._setAttributes();
 		const component = this.render();
-		this._element.innerHTML = ''
-		this._element.appendChild(component)
+		this._element.innerHTML = '';
+		this._element.appendChild(component);
 	}
 
 	public compile(template: string, props: TProps): DocumentFragment {
@@ -138,7 +138,7 @@ export class Component<TProps extends BaseProps = BaseProps> extends BaseCompone
 		});
 
 		const fragment = this._createDocumentElement('template') as HTMLTemplateElement;
-		const fragmentTemplate = compile(template)
+		const fragmentTemplate = compile(template);
 		fragment.innerHTML = fragmentTemplate(propsAndStubs);
 
 		Object.entries(this.children).forEach(([key, child]) => {

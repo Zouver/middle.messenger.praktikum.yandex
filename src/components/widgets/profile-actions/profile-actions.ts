@@ -10,7 +10,7 @@ export class ProfileActions extends Component<ProfileActionsProps>{
 	constructor(props: ProfileActionsProps = {}) {
 		const changeProfileLink =  props.changeProfileLink || defaultProps.changeProfileLinkDefault;
 		const changePasswordLink =  props.changePasswordLink || defaultProps.changePasswordLinkDefault;
-		const logoutLink = props.logoutLink || defaultProps.logoutLinkDefault
+		const logoutLink = props.logoutLink || defaultProps.logoutLinkDefault;
 
 		super("div", {...props, changePasswordLink, changeProfileLink, logoutLink}, ['profile-actions']);
 	}

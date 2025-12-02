@@ -12,9 +12,9 @@ export abstract class BaseComponent<TProps> {
 
 	protected props!: TProps;
 	protected events!: Events;
-	protected children!: Record<string, Component | Component[]>
+	protected children!: Record<string, Component | Component[]>;
 
-	protected _id!: string
+	protected _id!: string;
 	protected _eventBus!: EventBus;
 	protected _classNames!: string[];
 
@@ -26,7 +26,7 @@ export abstract class BaseComponent<TProps> {
 	protected _element: HTMLElement | null = null;
 	protected _meta: Meta | null = null;
 
-	componentDidUpdate(_oldProps: TProps, _newProps: TProps): boolean {return true}
+	componentDidUpdate(_oldProps: TProps, _newProps: TProps): boolean {return true;}
 	componentDidMount(): void {}
-	render(): DocumentFragment {return document.createDocumentFragment()}
+	render(): DocumentFragment {return document.createDocumentFragment();}
 }

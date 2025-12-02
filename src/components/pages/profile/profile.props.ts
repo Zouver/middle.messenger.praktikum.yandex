@@ -1,4 +1,4 @@
-import {type BaseProps} from '@/lib'
+import {type BaseProps} from '@/lib';
 import {TextHeading} from "@components/shared";
 import {ProfileNav, ProfileActions, ProfilePicture, ProfileChangePassword, ProfileInformation} from "@components/widgets";
 

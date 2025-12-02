@@ -4,7 +4,7 @@ import {ButtonIcon} from "@components/shared";
 import {profileNavTemplate} from "./profile-nav.template.ts";
 
 import type {ProfileNavProps} from "./profile-nav.props.ts";
-import './profile-nav.css'
+import './profile-nav.css';
 
 export class ProfileNav extends Component<ProfileNavProps> {
 	constructor(props: ProfileNavProps = {}) {

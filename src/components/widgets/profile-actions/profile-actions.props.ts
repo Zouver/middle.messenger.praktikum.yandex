@@ -1,4 +1,4 @@
-import {Text} from '@components/shared'
+import {Text} from '@components/shared';
 
 import type {BaseProps} from "@/lib";
 export interface ProfileActionsProps extends BaseProps{

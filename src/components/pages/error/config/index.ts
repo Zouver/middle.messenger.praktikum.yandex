@@ -4,7 +4,7 @@ import {TextDisplay, TextHeading} from "@components/shared";
 const ERROR_CODE_TEXT: Record<404 | 500, string> = {
 	404: "Не туда попали",
 	500: "Мы уже фиксим"
-}
+};
 
 export const getContentByStatusCode = (statusCode: 404 | 500) => {
 
@@ -21,5 +21,5 @@ export const getContentByStatusCode = (statusCode: 404 | 500) => {
 	return{
 		errorCodeDefault,
 		errorContentDefault
-	}
-}
+	};
+};

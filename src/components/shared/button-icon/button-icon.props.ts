@@ -1,4 +1,4 @@
-import {type BaseProps} from '@/lib'
+import {type BaseProps} from '@/lib';
 
 import type {ButtonVariant} from "@components/shared/button/button.props.ts";
 

@@ -11,4 +11,4 @@ export const profilePictureDefault = new ProfilePicture({
 		text: "Поменять аватар",
 		variant: "on-dark"
 	}),
-})
+});

@@ -13,7 +13,7 @@ export class ProfilePage extends Component<ProfilePageProps> {
 		const profileNav = props.profileNav || new ProfileNav();
 		const profileActions = props.profileActions || new ProfileActions();
 		const profileInformations = props.profileInformations || new ProfileInformation({isChange: props.state === "profile-change"});
-		const heading = props.heading || defaultProps.headingDefault
+		const heading = props.heading || defaultProps.headingDefault;
 		const profilePicture = props.profilePicture || defaultProps.profilePictureDefault;
 		const profilePasswordChange = props.profilePasswordChange || new ProfileChangePassword();
 		const isChangePassword = props.state === "password-change";

@@ -3,7 +3,7 @@ import {Component} from "@/lib";
 import {navigationTemplate} from "./navigation.template.ts";
 
 import type {NavigationProps} from "./navigation.props.ts";
-import './navigation.css'
+import './navigation.css';
 
 export class Navigation extends Component<NavigationProps> {
 	constructor(props: NavigationProps) {

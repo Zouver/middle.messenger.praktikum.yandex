@@ -1,4 +1,4 @@
-import {type BaseProps} from '@/lib'
+import {type BaseProps} from '@/lib';
 import {KeyValueItem} from "@components/shared";
 
 

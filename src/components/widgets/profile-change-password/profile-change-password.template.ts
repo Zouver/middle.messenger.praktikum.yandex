@@ -2,4 +2,4 @@
 export const ProfileChangePasswordTemplate = `
 	{{{ inputs }}}
 	{{{ submitButton }}}
-`
+`;

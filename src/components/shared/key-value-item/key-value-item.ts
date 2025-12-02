@@ -3,7 +3,7 @@ import {Component} from "@/lib";
 import {KeyValueItemTemplate} from "./key-value-item.template.ts";
 
 import type {KeyValueItemProps} from "./key-value-item.props.ts";
-import "./key-value-item.css"
+import "./key-value-item.css";
 
 export class KeyValueItem extends Component<KeyValueItemProps> {
 
@@ -13,6 +13,6 @@ export class KeyValueItem extends Component<KeyValueItemProps> {
 
 
 	render(){
-		return this.compile(KeyValueItemTemplate, this.props)
+		return this.compile(KeyValueItemTemplate, this.props);
 	}
 }

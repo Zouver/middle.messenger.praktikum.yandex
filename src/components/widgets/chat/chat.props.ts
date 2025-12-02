@@ -1,4 +1,4 @@
-import {type BaseProps} from '@/lib'
+import {type BaseProps} from '@/lib';
 import {ButtonIcon, Input, TextTitle} from "@components/shared";
 import {Message} from "@components/widgets";
 

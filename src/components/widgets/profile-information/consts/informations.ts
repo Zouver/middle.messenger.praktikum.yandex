@@ -57,4 +57,4 @@ export const informationsChangeDefault: KeyValueItem[] = [
 export const getInformationsDefaultByState = (isChange: boolean) => {
 	const items = isChange ? informationsChangeDefault : informationsDefault;
 	return new KeyValueList({items});
-}
+};

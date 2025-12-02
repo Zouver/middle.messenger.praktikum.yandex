@@ -1,4 +1,4 @@
-import {type BaseProps} from '@/lib'
+import {type BaseProps} from '@/lib';
 import {TextLabel} from "@components/shared";
 
 export interface InputProps extends BaseProps{

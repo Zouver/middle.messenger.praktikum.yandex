@@ -4,4 +4,4 @@ export const profileInformationTemplate = `
     {{# if isChange }}
         {{{ submitButton }}}
     {{/if}}
-`
+`;

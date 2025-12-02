@@ -13,7 +13,7 @@
 }
 
 .input-form:has(input:not(:placeholder-shown)) {
-    padding: 16px 0 0 0;
+    padding: 16px 0 0;
 }
 
 .input-form:has(input:not(:placeholder-shown)) label {

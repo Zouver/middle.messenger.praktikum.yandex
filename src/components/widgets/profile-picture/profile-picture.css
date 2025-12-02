@@ -1,0 +1,44 @@
+.profile-picture{
+    height: 130px;
+    width: 130px;
+    background: var(--gray-240);
+    border-radius: 999px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-picture input[type="file"] {
+    position: relative;
+    display: none;
+}
+
+
+.profile-picture i{
+    font-size: 40px;
+    color: rgb(205, 205, 205);
+}
+
+.profile-overlay{
+    position: absolute;
+    background: rgba(0,0,0,0);
+    transition: background-color .18s ease, opacity .18s ease, transform .12s ease;
+    opacity: 0;
+    pointer-events: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+}
+
+.profile-picture:hover .profile-overlay,
+.profile-picture:focus .profile-overlay {
+    background: rgba(0,0,0,0.35);
+    opacity: 1;
+    pointer-events: auto;
+    transform: none;
+}

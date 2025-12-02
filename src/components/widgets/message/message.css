@@ -1,3 +1,5 @@
+/* stylelint-disable no-descending-specificity */
+
 .message{
     color: var(--gray-30);
     width: 100%;
@@ -19,12 +21,11 @@
     position: static;
     display: flex;
     gap: 4px;
-
     justify-content: end;
     align-items: center;
 }
 
-.message .content .more .statusIcon{
+.message .content .more .status-icon{
     font-size: 8px;
 }
 
@@ -36,12 +37,6 @@
     justify-content: flex-start;
 }
 
-.message .content {
-    border-radius: 0 16px 16px 16px;
-    background: var(--gray-250);
-}
-
-/* state: self */
 .initiator-self .content {
     border-radius: 16px 0 16px 16px;
     background: var(--light-blue);
@@ -57,18 +52,18 @@
 }
 
 .initiator-self .more .time,
-.initiator-self .more .statusIcon {
+.initiator-self .more .status-icon {
     color: var(--primary);
 }
 
 .initiator-companion .more .time,
-.initiator-companion .more .statusIcon {
+.initiator-companion .more .status-icon {
     color: var(--gray-150);
 }
 
 .type-picture .more {
     border-radius: 30px;
-    background: rgba(82, 82, 82, 0.5);
+    background: rgb(82 82 82 / 50%);
     padding: 2px 4px;
     position: absolute !important;
     right: 8px;
@@ -76,6 +71,6 @@
 }
 
 .type-picture .time,
-.type-picture .statusIcon {
+.type-picture .status-icon {
     color: var(--white) !important;
 }

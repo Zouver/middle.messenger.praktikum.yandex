@@ -14,10 +14,9 @@
 }
 
 .profile-container{
-    padding: 64px 32px 32px 32px;
+    padding: 64px 32px 32px;
     box-sizing: border-box;
     width: 700px;
-
     display: flex;
     flex-direction: column;
     gap: 64px;

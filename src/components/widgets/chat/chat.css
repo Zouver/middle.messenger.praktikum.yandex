@@ -26,6 +26,7 @@
     flex: 1;
     overflow-y: scroll;
 }
+
 #selected-chat-panel{
     display: flex;
     height: max-content;
@@ -43,6 +44,7 @@
     padding: 0 16px;
     outline: none;
 }
+
 #selected-chat-content .input::after{
     content: "";
     display: none;

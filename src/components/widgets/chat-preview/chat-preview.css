@@ -1,13 +1,8 @@
 .chat-preview{
     padding: 8px 16px;
     display: grid;
-    grid-column-gap: 12px;
-    grid-template-columns: 47px 1fr;
-    grid-template-rows: min-content 1fr;
-    grid-template-areas:
-        "avatar header"
-        "avatar message";
-
+    column-gap: 12px;
+    grid-template: "avatar header" min-content "avatar message" 1fr / 47px 1fr;
     transition: 0.5s;
 
 }

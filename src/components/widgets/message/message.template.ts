@@ -9,7 +9,7 @@ export const messageTemplate = `
     {{/if}}
     <div class="more">
       {{#if statusIcon}}
-        <i class="statusIcon fa-solid {{statusIcon}}"></i>
+        <i class="status-icon fa-solid {{statusIcon}}"></i>
       {{/if}}
       {{{ time }}}
     </div>

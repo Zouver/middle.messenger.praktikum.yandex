@@ -1,42 +1,30 @@
 import {METHODS} from "@lib/fetch/consts.ts";
 import {buildQueryURL, isStringDict} from "@lib/fetch/utils.ts";
 
-import type {HTTPTransportOptions, HTTPTransportOptionsShort} from "@lib/fetch/types.ts";
+import type {HTTPMethod, HTTPTransportOptions} from "@lib/fetch/types.ts";
 
 export class HTTPTransport {
-	get = (
-		url: string ,
-		options: HTTPTransportOptionsShort = {}
+	get: HTTPMethod = (
+		url ,
+		options = {}
 	) => {
 		return this.request(url, {...options, method: METHODS.GET}, options.timeout);
 	};
 
-	post = (
-		url: string ,
-		options: HTTPTransportOptionsShort = {}
-	) => {
+	post: HTTPMethod = (url, options = {}) => {
 		return this.request(url, {...options, method: METHODS.POST}, options.timeout);
 	};
 
-	put = (
-		url: string ,
-		options: HTTPTransportOptionsShort = {}
-	) => {
+	put: HTTPMethod = (url, options = {}) => {
 		return this.request(url, {...options, method: METHODS.PUT}, options.timeout);
 	};
 
-	patch = (
-		url: string ,
-		options: HTTPTransportOptionsShort = {}
-	) => {
+	patch: HTTPMethod = (url, options = {}) => {
 		return this.request(url, {...options, method: METHODS.PATCH}, options.timeout);
 	};
 
 
-	delete = (
-		url: string ,
-		options: HTTPTransportOptionsShort = {}
-	) => {
+	delete: HTTPMethod = (url ,options = {}) => {
 		return this.request(url, {...options, method: METHODS.DELETE}, options.timeout);
 	};
 

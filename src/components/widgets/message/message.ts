@@ -1,8 +1,10 @@
-import {Component} from "@/lib";
+
+import {Component} from "@/lib/component";
 
 import {messageTemplate} from "./message.template.ts";
 
 import type {MessageProps} from "./message.props.ts";
+
 import './message.css';
 
 export class Message extends Component<MessageProps> {

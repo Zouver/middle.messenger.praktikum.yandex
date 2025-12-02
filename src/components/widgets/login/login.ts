@@ -1,9 +1,10 @@
-import {Component} from "@/lib";
+import {Component} from "@/lib/component";
 import {Button, TextLabel, TextHeading, InputForm} from "@components/shared";
 
 import {loginTemplate} from "./login.template.ts";
 
 import type {LoginProps} from "./login.props.ts";
+
 import './login.css';
 
 export class Login extends Component<LoginProps> {

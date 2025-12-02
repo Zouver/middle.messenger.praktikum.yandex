@@ -1,10 +1,12 @@
-import {Component} from "@/lib";
+
+import {Component} from "@/lib/component";
 
 import {submitButtonDefault} from "./consts";
 import {getInformationsDefaultByState} from "./consts/informations.ts";
 import {profileInformationTemplate} from "./profile-information.template.ts";
 
 import type {ProfileInformationProps} from "./profile-information.props.ts";
+
 
 
 export class ProfileInformation extends Component<ProfileInformationProps>{

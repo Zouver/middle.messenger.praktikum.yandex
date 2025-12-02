@@ -1,5 +1,6 @@
-import {type BaseProps} from '@/lib';
+import {type BaseProps} from '@/lib/component';
 import {Text, TextLabel} from "@components/shared";
+
 
 export type Initiator = "self" | "companion"
 export type Status = "fa-check" | "fa-check-double" | "fa-clock";

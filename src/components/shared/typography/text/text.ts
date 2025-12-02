@@ -1,7 +1,8 @@
-import {Component} from "@/lib";
+import {Component} from "@/lib/component";
 import {textTemplate} from "@components/shared/typography/text/text.template.ts";
 
 import type {TextProps} from "@components/shared/typography/text/text.props.ts";
+
 
 export class Text extends Component<TextProps> {
 	constructor(props: TextProps) {

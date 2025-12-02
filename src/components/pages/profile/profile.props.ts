@@ -1,6 +1,7 @@
-import {type BaseProps} from '@/lib';
+import {type BaseProps} from '@/lib/component';
 import {TextHeading} from "@components/shared";
 import {ProfileNav, ProfileActions, ProfilePicture, ProfileChangePassword, ProfileInformation} from "@components/widgets";
+
 
 export interface ProfilePageProps extends BaseProps{
 	state: "default" | "profile-change" | "password-change";

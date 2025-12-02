@@ -1,7 +1,8 @@
-import {Component} from "@/lib";
+import {Component} from "@/lib/component";
 import {buttonTemplate} from "@components/shared/button/button.template.ts";
 
 import type {ButtonProps} from "@components/shared/button/button.props.ts";
+
 import './button.css';
 
 export class Button extends Component<ButtonProps> {

@@ -1,4 +1,4 @@
-import {Component} from "@/lib";
+import {Component} from "@/lib/component";
 import {changePasswordInputsDefault, submitButtonDefault} from "@components/widgets/profile-change-password/config";
 import {
 	ProfileChangePasswordTemplate
@@ -7,6 +7,7 @@ import {
 import type {
 	ProfileChangePasswordProps
 } from "@components/widgets/profile-change-password/profile-change-password.props.ts";
+
 
 
 export class ProfileChangePassword extends Component<ProfileChangePasswordProps>{

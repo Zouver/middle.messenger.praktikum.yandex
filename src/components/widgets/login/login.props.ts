@@ -1,5 +1,6 @@
-import {type BaseProps} from '@/lib';
+import {type BaseProps} from '@/lib/component';
 import {TextHeading, Input, Button} from "@components/shared";
+
 
 export interface LoginProps extends BaseProps{
 	heading?: TextHeading;

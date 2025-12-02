@@ -1,9 +1,11 @@
-import {Component} from "@/lib";
+
+import {Component} from "@/lib/component";
 
 import * as defaultProps from "./consts";
 import {profileActionsTemplate} from "./profile-actions.template.ts";
 
 import type {ProfileActionsProps} from "./profile-actions.props.ts";
+
 
 export class ProfileActions extends Component<ProfileActionsProps>{
 

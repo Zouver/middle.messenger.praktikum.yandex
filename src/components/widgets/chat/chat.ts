@@ -1,9 +1,10 @@
-import {Component} from "@/lib";
+import {Component} from "@/lib/component";
 import {Input, ButtonIcon} from "@components/shared";
 
 import {chatTemplate} from "./chat.template.ts";
 
 import type {ChatProps} from "./chat.props.ts";
+
 import './chat.css';
 
 export class Chat extends Component<ChatProps> {

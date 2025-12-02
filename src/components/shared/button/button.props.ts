@@ -1,4 +1,4 @@
-import {type BaseProps} from '@/lib';
+import {type BaseProps} from '@/lib/component';
 
 export type ButtonVariant = "primary" | "transparent"
 

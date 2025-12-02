@@ -1,6 +1,8 @@
-import {type BaseProps} from '@/lib';
+import {type BaseProps} from '@/lib/component';
 
 import type {Types} from "@components/shared/typography/types.ts";
+
+
 
 
 export interface TextProps extends BaseProps{

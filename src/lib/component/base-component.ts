@@ -1,4 +1,5 @@
-import {Component, EventBus} from "@/lib";
+import {Component} from '@/lib/component';
+import {EventBus} from '@/lib/event-bus';
 
 import type {Events, Meta} from "@lib/component/types.ts";
 

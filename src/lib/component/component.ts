@@ -1,12 +1,11 @@
 import { compile } from "handlebars";
 import {v4 as makeUUID} from 'uuid';
 
-import {EventBus} from "@/lib";
+import {EventBus} from "@/lib/event-bus";
 import {BaseComponent} from "@lib/component/base-component.ts";
 
 import type {BaseProps} from "@lib/component/types.ts";
 import type {EventBusCallback} from "@lib/event-bus/types.ts";
-
 
 
 export class Component<TProps extends BaseProps = BaseProps> extends BaseComponent<TProps> {

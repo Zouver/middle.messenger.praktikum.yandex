@@ -1,8 +1,10 @@
-import {Component} from "@/lib";
+
+import {Component} from "@/lib/component";
 
 import {navigationTemplate} from "./navigation.template.ts";
 
 import type {NavigationProps} from "./navigation.props.ts";
+
 import './navigation.css';
 
 export class Navigation extends Component<NavigationProps> {

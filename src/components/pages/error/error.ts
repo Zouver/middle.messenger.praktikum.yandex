@@ -1,10 +1,11 @@
-import {Component} from "@/lib";
+import {Component} from "@/lib/component";
 import {Text} from "@components/shared";
 
 import {getContentByStatusCode} from "./consts";
 import {errorPageTemplate} from "./error.template.ts";
 
 import type {ErrorPageProps} from "./error.props.ts";
+
 import './error.css';
 
 export class ErrorPage extends Component<ErrorPageProps> {

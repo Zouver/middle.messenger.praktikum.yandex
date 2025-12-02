@@ -1,8 +1,10 @@
-import {Component} from "@/lib";
+
+import {Component} from "@/lib/component";
 
 import {KeyValueItemTemplate} from "./key-value-item.template.ts";
 
 import type {KeyValueItemProps} from "./key-value-item.props.ts";
+
 import "./key-value-item.css";
 
 export class KeyValueItem extends Component<KeyValueItemProps> {

@@ -1,10 +1,11 @@
-import {Component} from "@/lib";
+import {Component} from "@/lib/component";
 import {ProfileNav, ProfileInformation, ProfileActions, ProfileChangePassword} from "@components/widgets";
 
 import * as defaultProps from "./consts";
 import {profilePageTemplate} from "./profile.template.ts";
 
 import type {ProfilePageProps} from "@components/pages/profile";
+
 
 import './profile.css';
 

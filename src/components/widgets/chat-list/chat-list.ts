@@ -1,9 +1,10 @@
-import {Component} from "@/lib";
+import {Component} from "@/lib/component";
 import {Input, Text} from "@components/shared";
 
 import {chatListTemplate} from "./chat-list.template.ts";
 
 import type {ChatListProps} from "./chat-list.props.ts";
+
 import './chat-list.css';
 
 export class ChatList extends Component<ChatListProps> {

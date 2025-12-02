@@ -1,4 +1,4 @@
-import {render} from "@/lib";
+import {render} from "@/lib/render";
 import {AuthPage, ChatPage, ErrorPage, ProfilePage} from "@components/pages";
 import {Login, Signup} from "@components/widgets";
 

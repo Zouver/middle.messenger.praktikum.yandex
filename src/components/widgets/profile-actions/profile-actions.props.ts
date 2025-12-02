@@ -1,6 +1,6 @@
 import {Text} from '@components/shared';
 
-import type {BaseProps} from "@/lib";
+import type {BaseProps} from "@/lib/component";
 export interface ProfileActionsProps extends BaseProps{
 	changeProfileLink?: Text;
 	changePasswordLink?: Text;

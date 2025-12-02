@@ -1,7 +1,8 @@
-import {Component} from "@/lib";
+import {Component} from "@/lib/component";
 import {buttonIconTemplate} from "@components/shared/button-icon/button-icon.template.ts";
 
 import type {ButtonIconProps} from "@components/shared/button-icon/button-icon.props.ts";
+
 import "./button-icon.css";
 
 export class ButtonIcon extends Component<ButtonIconProps> {

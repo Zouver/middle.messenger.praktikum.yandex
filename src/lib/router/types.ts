@@ -3,7 +3,7 @@ export type RouteHandler = () => void;
 export interface Route {
 	path: string;
 	handler: RouteHandler;
-	title?: string;
+	title: string;
 }
 
 export interface RouterErrorHandlers {

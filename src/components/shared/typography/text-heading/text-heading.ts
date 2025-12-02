@@ -1,7 +1,8 @@
-import {Component} from "@/lib";
+import {Component} from "@/lib/component";
 import {textHeadingTemplate} from "@components/shared/typography/text-heading/text-heading.template.ts";
 
 import type {TextHeadingProps} from "@components/shared/typography/text-heading/text-heading.props.ts";
+
 
 export class TextHeading extends Component<TextHeadingProps> {
 	constructor(props: TextHeadingProps) {

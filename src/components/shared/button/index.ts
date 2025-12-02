@@ -1,2 +1,2 @@
 export {Button} from './button';
-export type {ButtonProps} from './button.props.ts';
+export type {ButtonProps, ButtonVariant} from './button.props.ts';

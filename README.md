@@ -12,7 +12,7 @@
 > https://verdant-concha-6bcabc.netlify.app/
 
 ## 🔗 Pull Request
-> [Ссылка на PR →](https://github.com/Zouver/middle.messenger.praktikum.yandex/pull/1)
+> [Ссылка на PR →](https://github.com/Zouver/middle.messenger.praktikum.yandex/pull/3)
 
 ---
 

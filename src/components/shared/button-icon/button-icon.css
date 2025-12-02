@@ -1,0 +1,14 @@
+.button-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 32px;
+    width: 32px;
+
+    cursor: pointer;
+    border: none;
+    border-radius: 30px;
+    padding: 0;
+    font-size: 16px;
+}

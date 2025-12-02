@@ -1,0 +1,8 @@
+.profile-navigation{
+    height: 100vh;
+    min-width: 100px;
+    background: var(--gray-250);
+
+    align-content: center;
+    justify-items: center;
+}

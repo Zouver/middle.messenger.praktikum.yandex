@@ -1,4 +1,16 @@
 {
+  "compilerOptions": {
+    // for github tests
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedSideEffectImports": true,
+
+    "noImplicitAny": true,
+    "sourceMap": true,
+    "strictNullChecks": true
+  },
   "files": [],
   "references": [
     { "path": "./tsconfig.app.json" },

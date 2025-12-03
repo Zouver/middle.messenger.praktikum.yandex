@@ -27,12 +27,6 @@
     overflow-y: scroll;
 }
 
-#selected-chat-panel{
-    display: flex;
-    height: max-content;
-    align-items: center;
-    gap: 8px;
-}
 
 #selected-chat-content .input{
     box-sizing: border-box;

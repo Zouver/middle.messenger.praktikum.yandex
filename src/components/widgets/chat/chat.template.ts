@@ -11,10 +11,6 @@ export const chatTemplate = `
     {{/each}}
   </main>
   <hr />
-  <form id="selected-chat-panel">
-    {{{ attachButton }}}
-    {{{ input }}}
-    {{{ sendButton }}}
-  </form>
+  {{{selectedChatPanel}}}
 `;
 

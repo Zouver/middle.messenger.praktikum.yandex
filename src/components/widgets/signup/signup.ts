@@ -1,8 +1,12 @@
 import {Component} from "@/lib/component";
-import {buttonsDefault, headingDefault, inputDefault} from "@components/widgets/signup/config";
-import {signupTemplate} from "@components/widgets/signup/signup.template.ts";
+import { getFormData } from "@/lib/utils/form.ts";
+import {AuthForm} from "@components/widgets";
 
-import type {SignupProps} from "@components/widgets/signup/signup.props.ts";
+import {buttonsDefault, headingDefault, inputDefault} from "./config";
+import {signupTemplate} from "./signup.template.ts";
+
+import type {SignupProps} from "./signup.props.ts";
+import type { InputForm } from "@/components/shared/index.ts";
 
 
 
@@ -12,9 +16,25 @@ export class Signup extends Component<SignupProps> {
 		const inputs = props.inputs || inputDefault;
 		const buttons = props.buttons || buttonsDefault;
 
+
+		const onSubmit = (event: SubmitEvent) => {
+			event.preventDefault();
+			let isValid = true;
+			const data = getFormData(event.target as HTMLFormElement);
+			console.log(data);
+
+			Object.entries(data).forEach(([key, value]) => {
+				const input = inputs.find(input => input.props.name === key) as InputForm;
+				isValid = input.validate(value as string);
+			});
+
+			if(!isValid) return;
+		};
+
+		const authForm = props.authForm || new AuthForm({inputs: inputs, buttons: buttons, onSubmit});
 		super(
 			"div",
-			{...props, heading, inputs, buttons},
+			{...props, heading, authForm},
 			["auth-widget"]
 		);
 	}

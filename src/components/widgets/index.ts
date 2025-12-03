@@ -11,3 +11,4 @@ export {ProfilePicture} from "./profile-picture";
 export {ProfileInformation} from "./profile-information";
 export {ProfileChangePassword} from "./profile-change-password";
 export {ProfileActions} from "./profile-actions";
+export {AuthForm} from "./auth-form";

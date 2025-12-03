@@ -1,4 +1,4 @@
-export type Events = Partial<{[K in keyof HTMLElementEventMap]: EventListener}>
+export type Events = Partial<{[K in keyof HTMLElementEventMap]: (event: HTMLElementEventMap[K]) => void;}>
 
 export interface BaseProps {
 	events?: Events;

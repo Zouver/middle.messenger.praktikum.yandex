@@ -5,12 +5,7 @@ export const inputTemplate = `
 			 	{{{ label }}}
 			 </label>
 	 {{/if}}
-  <input 
-		id="{{name}}" 
-		name="{{name}}" 
-		type="{{type}}" 
-		value="{{value}}" 
-		placeholder="{{placeholder}}"
-	/>
+	{{{ input }}}
+	{{error}}
 `;
 

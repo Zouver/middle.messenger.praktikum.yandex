@@ -11,9 +11,9 @@ export abstract class BaseComponent<TProps> {
 		FLOW_RENDER: "flow:render"
 	} as const;
 
-	protected props!: TProps;
-	protected events!: Events;
-	protected children!: Record<string, Component | Component[]>;
+	public props!: TProps;
+	public events!: Events;
+	public children!: Record<string, Component | Component[]>;
 
 	protected _id!: string;
 	protected _eventBus!: EventBus;

@@ -1,3 +1,4 @@
+import { passwordStrong, required } from "@/lib/validator/validators";
 import {Button, Input, KeyValueItem, KeyValueList} from "@components/shared";
 
 export const changePasswordInputs: KeyValueItem[] = [
@@ -7,11 +8,11 @@ export const changePasswordInputs: KeyValueItem[] = [
 	}),
 	new KeyValueItem({
 		key: "Новый пароль",
-		value: new Input({name: "newPassword", value: "ivanivanov", type: "password"})
+		value: new Input({name: "newPassword", value: "ivanivanov", type: "password", validators: [required(), passwordStrong()]})
 	}),
 	new KeyValueItem({
 		key: "Повторите новый пароль",
-		value: new Input({name: "newPasswordSubmit", value: "ivanivanov", type: "password"})
+		value: new Input({name: "newPasswordSubmit", value: "ivanivanov", type: "password", validators: [required(), passwordStrong()]})
 	}),
 ];
 

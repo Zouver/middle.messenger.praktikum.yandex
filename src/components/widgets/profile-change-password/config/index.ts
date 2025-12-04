@@ -4,15 +4,15 @@ import {Button, Input, KeyValueItem, KeyValueList} from "@components/shared";
 export const changePasswordInputs: KeyValueItem[] = [
 	new KeyValueItem({
 		key: "Старый пароль",
-		value: new Input({name: "oldPassword", value: "pochta@yandex.ru", type: "password"})
+		value: new Input({name: "oldPassword", value: "pochta@yandex.ru", type: "password", placeholder: "Старый пароль"})
 	}),
 	new KeyValueItem({
 		key: "Новый пароль",
-		value: new Input({name: "newPassword", value: "ivanivanov", type: "password", validators: [required(), passwordStrong()]})
+		value: new Input({name: "newPassword", value: "ivanivanov", type: "password", placeholder: "Новый пароль", validators: [required(), passwordStrong()]})
 	}),
 	new KeyValueItem({
 		key: "Повторите новый пароль",
-		value: new Input({name: "newPasswordSubmit", value: "ivanivanov", type: "password", validators: [required(), passwordStrong()]})
+		value: new Input({name: "newPasswordSubmit", value: "ivanivanov", type: "password", placeholder: "Повторите новый пароль", validators: [required(), passwordStrong()]})
 	}),
 ];
 

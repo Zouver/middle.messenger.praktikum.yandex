@@ -5,7 +5,11 @@ export const inputTemplate = `
 			 	{{{ label }}}
 			 </label>
 	 {{/if}}
-	{{{ input }}}
-	{{error}}
+	 <div class="input-wrapper">
+		 {{{ input }}}
+	 </div>
+	 <div class="input-error">
+		 {{error}}
+	 </div>
 `;
 

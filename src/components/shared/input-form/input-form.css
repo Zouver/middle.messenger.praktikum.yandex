@@ -21,7 +21,7 @@
     transform: translateY(0);
 }
 
-.input-form::after {
+.input-form .input-wrapper::after {
     position: absolute;
     content: " ";
     width: 100%;

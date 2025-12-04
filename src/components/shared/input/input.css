@@ -12,3 +12,7 @@ input {
     display: block;
 }
 
+.input-error{
+	color: var(--critical) !important;
+	font-size: 12px;
+}

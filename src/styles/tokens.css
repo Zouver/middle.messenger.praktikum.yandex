@@ -1,13 +1,11 @@
 :root{
-    --primary: rgba(51, 105, 243, 1);
-    --critical: rgba(255, 47, 47, 1);
-
-    --white: rgba(255, 255, 255, 1);
-    --gray-30: rgba(30, 30, 30, 1);
-    --gray-150: rgba(153, 153, 153, 1);
-    --gray-240: rgba(239, 239, 239, 1);
-    --gray-250: rgba(251, 251, 251, 1);
-    --light-blue: rgba(228, 237, 253, 1);
-
+    --primary: rgb(51 105 243 / 100%);
+    --critical: rgb(255 47 47 / 100%);
+    --white: rgb(255 255 255 / 100%);
+    --gray-30: rgb(30 30 30 / 100%);
+    --gray-150: rgb(153 153 153 / 100%);
+    --gray-240: rgb(239 239 239 / 100%);
+    --gray-250: rgb(251 251 251 / 100%);
+    --light-blue: rgb(228 237 253 / 100%);
     --selected: #E4EDFD;
 }

@@ -1,0 +1,30 @@
+.input-form {
+    width: 100%;
+    position: relative;
+    display: block;
+}
+
+.input-form label{
+    opacity: 0;
+    transform: translateY(5px);
+    transition: all 0.25s ease;
+    position: absolute;
+    top: -8px;
+}
+
+.input-form:has(input:not(:placeholder-shown)) {
+    padding: 16px 0 0;
+}
+
+.input-form:has(input:not(:placeholder-shown)) label {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.input-form .input-wrapper::after {
+    position: absolute;
+    content: " ";
+    width: 100%;
+    height: 2px;
+    background: var(--primary);
+}

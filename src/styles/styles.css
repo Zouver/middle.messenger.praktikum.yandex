@@ -1,13 +1,11 @@
 :root {
-  font-family: "Montserrat", sans-serif;
+  font-family: Montserrat, sans-serif;
   font-optical-sizing: auto;
   line-height: 1.5;
   font-weight: 400;
-
-  color: rgba(255, 255, 255, 0.87);
-
+  color: rgb(255 255 255 / 87%);
   font-synthesis: none;
-  text-rendering: optimizeLegibility;
+  text-rendering: optimizelegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -40,3 +38,13 @@ hr{
 button {
   box-sizing: border-box;
 }
+
+#app{
+  width: 100%;
+}
+
+a{
+  color: var(--primary);
+  text-decoration: none;
+}
+

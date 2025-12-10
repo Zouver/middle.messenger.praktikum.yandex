@@ -1,0 +1,10 @@
+#selected-chat-panel{
+	display: flex;
+	height: max-content;
+	align-items: center;
+	gap: 8px;
+}
+
+#selected-chat-panel .input{
+	flex: 1
+}

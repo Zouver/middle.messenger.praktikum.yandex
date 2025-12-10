@@ -1,0 +1,18 @@
+input {
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 8px 0;
+    background: transparent;
+    box-sizing: border-box;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 13px;
+    position: relative;
+    display: block;
+}
+
+.input-error{
+	color: var(--critical) !important;
+	font-size: 12px;
+}

@@ -1,0 +1,17 @@
+.key-value-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    .key {
+        text-align: left;
+        flex: 1;
+    }
+
+    .value *{
+        text-align: right;
+        flex: 1;
+        color: var(--gray-150);
+    }
+}

@@ -1,0 +1,17 @@
+.button{
+    cursor: pointer;
+    border: none;
+    padding: 8px 24px;
+    width: max-content;
+    border-radius: 8px;
+}
+
+.button-primary{
+    background: var(--primary);
+    color: var(--white);
+}
+
+.button-transparent{
+    background: transparent ;
+    color: var(--gray-150);
+}

@@ -1,3 +1,4 @@
+import {router} from "@/app/router.ts";
 import {Component} from "@/lib/component";
 import {ButtonIcon} from "@components/shared";
 
@@ -11,7 +12,8 @@ export class ProfileNav extends Component<ProfileNavProps> {
 	constructor(props: ProfileNavProps = {}) {
 		const button = props.button || new ButtonIcon({
 			variant: "primary",
-			icon: "fa-solid fa-arrow-left"
+			icon: "fa-solid fa-arrow-left",
+			events: {"click": () => router.back()}
 		});
 
 		super(

@@ -1,14 +1,15 @@
+import {userApi, type UserCreateData} from "@/api/user.api.ts";
+import {router} from "@/app/router.ts";
 import {Component} from "@/lib/component";
 import { getFormData } from "@/lib/utils/form.ts";
+import {Text} from "@components/shared";
 import {AuthForm} from "@components/widgets";
+import {formValidate} from "@lib/validator/formValidate.ts";
 
 import {buttonsDefault, headingDefault, inputDefault} from "./config";
 import {signupTemplate} from "./signup.template.ts";
 
 import type {SignupProps} from "./signup.props.ts";
-import type { InputForm } from "@/components/shared/index.ts";
-
-
 
 export class Signup extends Component<SignupProps> {
 	constructor(props: SignupProps = {}) {
@@ -19,16 +20,23 @@ export class Signup extends Component<SignupProps> {
 
 		const onSubmit = (event: SubmitEvent) => {
 			event.preventDefault();
-			let isValid = true;
-			const data = getFormData(event.target as HTMLFormElement);
+			const data = getFormData<UserCreateData>(event.target as HTMLFormElement);
 			console.log(data);
 
-			Object.entries(data).forEach(([key, value]) => {
-				const input = inputs.find(input => input.props.name === key) as InputForm;
-				isValid = input.validate(value as string);
-			});
-
+			const isValid = formValidate(data, inputs);
 			if(!isValid) return;
+
+			userApi.create(data).then(() => {
+				console.log("Signup successful");
+				router.go('/');
+			}).catch((xhr) => {
+				console.warn("Signup failed: " + xhr?.response?.reason);
+				const authFormKey = Object.keys(this.props).find(key => key === 'authForm');
+				if(!authFormKey) return;
+				const authForm = this.props[authFormKey] as AuthForm;
+				console.log(authForm.props);
+				authForm.setProps({...authForm.props, error: new Text({text: xhr?.response?.reason || "Произошла ошибка", variant: "critical"})});
+			});
 		};
 
 		const authForm = props.authForm || new AuthForm({inputs: inputs, buttons: buttons, onSubmit});

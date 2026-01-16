@@ -1,3 +1,4 @@
+import {router} from "@/app/router.ts";
 import { required, email, passwordStrong } from "@/lib/validator/validators";
 import {Button, InputForm, TextHeading, TextLabel} from "@components/shared";
 
@@ -33,7 +34,12 @@ export const inputDefault: InputForm[] = inputs.map(input => new InputForm({
 
 export const buttonsDefault = [
 	new Button({text: "Зарегистрироваться", variant: "primary", type: "submit"}),
-	new Button({text: "Войти", variant: "transparent"})
+	new Button({text: "Войти", variant: "transparent", events:{
+		click: (e) => {
+			e.preventDefault();
+			router.go('/login');
+		}
+	}})
 ];
 
 export const headingDefault = new TextHeading({

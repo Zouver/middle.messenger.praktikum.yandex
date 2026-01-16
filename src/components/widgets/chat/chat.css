@@ -8,11 +8,25 @@
 }
 
 #selected-chat-header{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#selected-chat-header-left-side{
     height: max-content;
     display: flex;
     gap: 16px;
     align-items: center;
 }
+
+#selected-chat-header-right-side{
+	height: max-content;
+	display: flex;
+	gap: 16px;
+	align-items: center;
+}
+
 
 #selected-chat-avatar{
     height: 34px;

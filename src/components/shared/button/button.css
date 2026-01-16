@@ -11,6 +11,12 @@
     color: var(--white);
 }
 
+
+.button-critical{
+	background: var(--critical);
+	color: var(--white);
+}
+
 .button-transparent{
     background: transparent ;
     color: var(--gray-150);

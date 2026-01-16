@@ -23,8 +23,13 @@
 
 #chat-list-navigation{
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
     padding: 4px 0;
+	align-items: center;
+}
+
+#chat-list-navigation a {
+	height: max-content;
 }
 
 #chat-list-content{

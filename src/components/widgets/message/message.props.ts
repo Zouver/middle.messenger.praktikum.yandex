@@ -7,6 +7,7 @@ export type Status = "fa-check" | "fa-check-double" | "fa-clock";
 export type MessageType = "picture" | "text" ;
 
 export interface MessageProps extends BaseProps{
+	displayName?: Text;
 	initiator: Initiator;
 	type: MessageType;
 	message?: Text;

@@ -1,6 +1,9 @@
 // language=hbs
 export const messageTemplate = `
   <div class="content">
+	  {{#if displayName }}
+		  {{{ displayName }}}
+	  {{/if}}
     {{#if message}}
       {{{ message }}}
     {{/if}}

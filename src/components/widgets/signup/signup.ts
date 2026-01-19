@@ -1,4 +1,5 @@
 import {userApi, type UserCreateData} from "@/api/user.api.ts";
+import {Paths} from "@/app/paths.ts";
 import {router} from "@/app/router.ts";
 import {Component} from "@/lib/component";
 import { getFormData } from "@/lib/utils/form.ts";
@@ -28,7 +29,7 @@ export class Signup extends Component<SignupProps> {
 
 			userApi.create(data).then(() => {
 				console.log("Signup successful");
-				router.go('/');
+				router.go(Paths.Messenger);
 			}).catch((xhr) => {
 				console.warn("Signup failed: " + xhr?.response?.reason);
 				const authFormKey = Object.keys(this.props).find(key => key === 'authForm');

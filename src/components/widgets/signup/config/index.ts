@@ -1,3 +1,4 @@
+import {Paths} from "@/app/paths.ts";
 import {router} from "@/app/router.ts";
 import { required, email, passwordStrong } from "@/lib/validator/validators";
 import {Button, InputForm, TextHeading, TextLabel} from "@components/shared";
@@ -37,7 +38,7 @@ export const buttonsDefault = [
 	new Button({text: "Войти", variant: "transparent", events:{
 		click: (e) => {
 			e.preventDefault();
-			router.go('/login');
+			router.go(Paths.SignIn);
 		}
 	}})
 ];

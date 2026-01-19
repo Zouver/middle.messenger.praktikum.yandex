@@ -15,7 +15,7 @@ export type UserCreateData = {
 export type UserUpdateData = {
 	oldPassword?: string;
 	newPassword?: string;
-	avatar?: FormData
+	avatar?: File
 	user?: Omit<User, "id" | "avatar">
 }
 
@@ -62,7 +62,9 @@ export class UserApi {
 		}
 
 		if(avatar){
-			const xhr = await userInstance.put('/profile/avatar', avatar);
+			const formData = new FormData();
+			formData.append('avatar', avatar);
+			const xhr = await userInstance.put('/profile/avatar', formData);
 			return xhr.response as User;
 		}
 

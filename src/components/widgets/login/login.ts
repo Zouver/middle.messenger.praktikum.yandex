@@ -13,6 +13,7 @@ import {loginTemplate} from "./login.template.ts";
 import type {LoginProps} from "./login.props.ts";
 
 import './login.css';
+import {Paths} from "@/app/paths.ts";
 
 
 export class Login extends Component<LoginProps> {
@@ -47,7 +48,7 @@ export class Login extends Component<LoginProps> {
 			new Button({text: "Нет аккаунта?", variant: "transparent", events: {
 				click: (e) => {
 					e.preventDefault();
-					router.go("/signup");
+					router.go(Paths.SignUp);
 				}
 			}})
 		];
@@ -63,7 +64,7 @@ export class Login extends Component<LoginProps> {
 			userApi.login(data.login, data.password).then(() => {
 				userApi.request().then(console.log);
 				console.log("Success login");
-				router.go('/');
+				router.go(Paths.Messenger);
 			}).catch((xhr) => {
 				console.warn("Login failed: " + xhr?.response?.reason);
 				const authFormKey = Object.keys(this.props).find(key => key === 'authForm');

@@ -1,22 +1,28 @@
 import {Component} from "@/lib/component";
-import {ProfileNav, ProfileInformation, ProfileActions, ProfileChangePassword} from "@components/widgets";
+import {
+	ProfileNav,
+	ProfileInformation,
+	ProfileActions,
+	ProfileChangePassword,
+} from "@components/widgets";
 
 import * as defaultProps from "./consts";
 import {profilePageTemplate} from "./profile.template.ts";
 
 import type {ProfilePageProps} from "@components/pages/profile";
-
+import type {ProfileState} from "@components/pages/profile/profile.props.ts";
 
 import './profile.css';
+import {userApi} from "@/api/user.api.ts";
+import { TextHeading} from "@components/shared";
 
 export class ProfilePage extends Component<ProfilePageProps> {
 	constructor(props: ProfilePageProps) {
-		const profileNav = props.profileNav || new ProfileNav();
-		const profileActions = props.profileActions || new ProfileActions();
-		const profileInformations = props.profileInformations || new ProfileInformation({isChange: props.state === "profile-change"});
-		const heading = props.heading || defaultProps.headingDefault;
-		const profilePicture = props.profilePicture || defaultProps.profilePictureDefault;
-		const profilePasswordChange = props.profilePasswordChange || new ProfileChangePassword();
+		const profileNav = new ProfileNav();
+		const profileInformations = new ProfileInformation({isChange: props.state === "profile-change"});
+		const profilePicture = defaultProps.profilePictureDefault;
+		const profilePasswordChange = new ProfileChangePassword();
+
 		const isChangePassword = props.state === "password-change";
 		const isDefaultState = props.state === "default";
 
@@ -25,16 +31,49 @@ export class ProfilePage extends Component<ProfilePageProps> {
 			{
 				...props,
 				profileNav,
-				heading,
 				profilePicture,
 				profileInformations,
-				profileActions,
 				profilePasswordChange,
 				isChangePassword,
 				isDefaultState
 			},
 			["profile-layout"]
 		);
+	}
+
+	setProfileState(state: ProfileState){
+		const isChangePassword = state === "password-change";
+		const isDefaultState = state === "default";
+		const isProfileChange = state === "profile-change";
+
+
+		const profileInformations = new ProfileInformation({isChange: isProfileChange});
+
+		this.updateProps({
+			state,
+			isDefaultState,
+			isChangePassword,
+			profileInformations
+		});
+	}
+
+	componentDidMount() {
+		const profileActions = new ProfileActions({
+			setState: this.setProfileState.bind(this),
+		});
+
+		userApi.request().then(user => {
+			const heading = new TextHeading({
+				text: `${user.first_name} ${user.second_name}`,
+				variant: "default"
+			});
+
+			this.props.profilePicture?.updateProps({
+				avatar: user.avatar,
+			});
+
+			this.updateProps({heading,profileActions});
+		});
 	}
 
 	render() {

@@ -1,3 +1,4 @@
+import {RESOURCES_URL} from "@/api/consts.ts";
 import {Component} from "@/lib/component";
 
 import {chatPreviewTemplate} from "./chat-preview.template.ts";
@@ -11,7 +12,16 @@ export class ChatPreview extends Component<ChatPreviewProps> {
 		super("div", props, ["chat-preview"]);
 	}
 
+	updateAvatar(avatar: string | null) {
+		if(!avatar) return;
+		const avatarElement = this.element.querySelector(".chat-preview-avatar") as HTMLDivElement | undefined;
+		if (!avatarElement) return;
+		avatarElement.style.background = `url("${RESOURCES_URL}${avatar}") no-repeat center`;
+	}
+
 	componentDidMount() {
+		const avatar = this.props.chat.avatar;
+		this.updateAvatar(avatar);
 		this.updateProps({events: {click: this.onClick.bind(this)}});
 	}
 

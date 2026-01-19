@@ -4,7 +4,7 @@ export const chatListTemplate = `
 	  {{#if createChat}}
 		  {{{createChat}}}
 	  {{/if}}
-	  <a href="/profile">{{{ text }}}</a>
+	  <a href="/settings">{{{ text }}}</a>
   </div>
   <div id="chat-list-search">
     {{{ search }}}

@@ -1,4 +1,5 @@
 import {userApi} from "@/api/user.api.ts";
+import { Paths } from "@/app/paths";
 import {router} from "@/app/router.ts";
 import  { Input, KeyValueItem, Text } from "@/components/shared";
 import {Component} from "@/lib/component";
@@ -43,7 +44,7 @@ export class ProfileChangePassword extends Component<ProfileChangePasswordProps>
 			const {oldPassword, newPassword} = data;
 			userApi.update({oldPassword, newPassword}).then(() => {
 				alert('Password updated successfully!');
-				router.go("/profile");
+				router.go(Paths.Settings);
 			}).catch(xhr => {
 				const error = xhr.response?.reason || "Произошла ошибка";
 				this.setProps({...this.props, error: new Text({text: error, variant:"critical"})});

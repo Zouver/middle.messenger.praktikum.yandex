@@ -1,4 +1,5 @@
 import {isAuth, isNotAuth} from "@/app/isAuth.ts";
+import {Paths} from "@/app/paths.ts";
 import {
 	AuthPage,
 	ChatPage,
@@ -11,44 +12,30 @@ import {Route, type RouterErrorHandlers} from "@lib/router";
 
 export const routes =  [
 	new Route({
-		pathname: "/",
+		pathname: Paths.Messenger,
 		view: ChatPage,
 		title: 'Messenger',
 		protectedCheck: isAuth
 	}),
 	new Route({
-		pathname: "/profile",
-		view: ProfilePage,
-		title: 'Profile',
-		props:{state: "default"},
-		protectedCheck: isAuth
-	}),
-	new Route({
-		pathname: "/login",
+		pathname: Paths.SignIn,
 		view: AuthPage,
 		title: 'Login',
 		props:{widget: new Login()},
 		protectedCheck: isNotAuth
 	}),
 	new Route({
-		pathname: "/signup",
+		pathname: Paths.SignUp,
 		view: AuthPage,
 		title: 'Signup',
 		props:{widget: new Signup()},
 		protectedCheck: isNotAuth
 	}),
 	new Route({
-		pathname: "/change-profile",
+		pathname: Paths.Settings,
 		view: ProfilePage,
-		title: 'Change profile',
-		props:{state: "profile-change"},
-		protectedCheck: isAuth
-	}),
-	new Route({
-		pathname: "/change-password",
-		view: ProfilePage,
-		title: 'Change password',
-		props:{state: "password-change"},
+		title: 'Profile',
+		props:{state: "default"},
 		protectedCheck: isAuth
 	}),
 ] as Route[];
@@ -56,13 +43,13 @@ export const routes =  [
 
 export const errorRoutes: RouterErrorHandlers ={
 	404: new Route({
-		pathname: "/error-404",
+		pathname: Paths.Error404,
 		view: ErrorPage,
 		title: 'Error 404',
 		props: {code: 404}
 	}),
 	500: new Route({
-		pathname: "/error-500",
+		pathname: Paths.Error500,
 		view: ErrorPage,
 		title: 'Error 500',
 		props: {code: 500}

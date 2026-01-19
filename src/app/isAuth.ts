@@ -1,4 +1,5 @@
 import {userApi} from "@/api/user.api.ts";
+import {Paths} from "@/app/paths.ts";
 
 import type {ProtectedRouteCheck} from "@lib/router/types.ts";
 
@@ -11,11 +12,11 @@ export const isAuth: ProtectedRouteCheck = () => new Promise((resolve, reject) =
 		.then(user => {
 			window.user = user;
 			if (user) resolve(true);
-			else reject("/login");
+			else reject(Paths.SignIn);
 		})
-		.catch(() => reject("/login"));
+		.catch(() => reject(Paths.SignIn));
 });
 
 export const isNotAuth: ProtectedRouteCheck = () => new Promise((resolve, reject) => {
-	isAuth().then(() => reject('/')).catch(() => resolve(true));
+	isAuth().then(() => reject(Paths.Messenger)).catch(() => resolve(true));
 });

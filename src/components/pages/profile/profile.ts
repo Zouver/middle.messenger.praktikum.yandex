@@ -1,4 +1,6 @@
+import {userApi} from "@/api/user.api.ts";
 import {Component} from "@/lib/component";
+import { TextHeading} from "@components/shared";
 import {
 	ProfileNav,
 	ProfileInformation,
@@ -13,8 +15,7 @@ import type {ProfilePageProps} from "@components/pages/profile";
 import type {ProfileState} from "@components/pages/profile/profile.props.ts";
 
 import './profile.css';
-import {userApi} from "@/api/user.api.ts";
-import { TextHeading} from "@components/shared";
+
 
 export class ProfilePage extends Component<ProfilePageProps> {
 	constructor(props: ProfilePageProps) {

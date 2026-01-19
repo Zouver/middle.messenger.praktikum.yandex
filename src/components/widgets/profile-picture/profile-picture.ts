@@ -1,17 +1,15 @@
 
+import {RESOURCES_URL} from "@/api/consts.ts";
+import {userApi} from "@/api/user.api.ts";
 import {Component} from "@/lib/component";
+import { Input} from "@components/shared";
 
 import {profilePictureTemplate} from "./profile-picture.template.ts";
 
 import type {ProfilePictureProps} from "./profile-picture.props.ts";
-
-import './profile-picture.css';
-import { Input} from "@components/shared";
-import {userApi} from "@/api/user.api.ts";
-
 import type {User} from "@/api/type.ts";
+import './profile-picture.css';
 
-import {RESOURCES_URL} from "@/api/consts.ts";
 
 export class ProfilePicture extends Component<ProfilePictureProps> {
 	constructor(props: ProfilePictureProps) {

@@ -34,6 +34,10 @@ export class Input extends Component<InputProps> {
 		this.updateProps({value: target.value});
 	};
 
+	getInputElement(): HTMLInputElement | null {
+		return this.element.querySelector('input');
+	}
+
 	constructor(props: InputProps, _classNames: string[] =[]) {
 		super("div",props,["input", ..._classNames]);
 	}
@@ -49,7 +53,8 @@ export class Input extends Component<InputProps> {
 			name: this.props.name,
 			type: this.props.type,
 			value: this.props.value || "",
-			placeholder: this.props.placeholder || ""
+			placeholder: this.props.placeholder || "",
+			accept: this.props.accept || ""
 		});
 
 		return this.compile(inputTemplate, {...this.props, input});

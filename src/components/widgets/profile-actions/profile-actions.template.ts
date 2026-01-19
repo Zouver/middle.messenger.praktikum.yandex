@@ -1,6 +1,6 @@
 //language=hbs
 export const profileActionsTemplate = `
-  <a href="/change-profile">{{{ changeProfileLink }}}</a><hr/>
-  <a href="/change-password">{{{ changePasswordLink }}}</a><hr/>
+  {{{ changeProfileButton }}}<hr/>
+ 	{{{ changePasswordButton }}}<hr/>
   <a href="">{{{ logoutLink }}}</a>
 `;

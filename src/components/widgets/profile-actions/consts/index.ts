@@ -1,4 +1,5 @@
 import {userApi} from "@/api/user.api.ts";
+import {Paths} from "@/app/paths.ts";
 import {router} from "@/app/router.ts";
 import {Text} from "@components/shared";
 
@@ -19,7 +20,7 @@ export const logoutLinkDefault = new Text({
 		click: (event) => {
 			event.preventDefault();
 			userApi.logout();
-			router.go('/login');
+			router.go(Paths.SignIn);
 		}
 	}
 });

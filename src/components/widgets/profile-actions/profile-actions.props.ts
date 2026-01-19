@@ -1,8 +1,10 @@
-import {Text} from '@components/shared';
+import {Button, Text} from '@components/shared';
 
 import type {BaseProps} from "@/lib/component";
+import type {ProfileState} from "@components/pages/profile/profile.props.ts";
 export interface ProfileActionsProps extends BaseProps{
-	changeProfileLink?: Text;
-	changePasswordLink?: Text;
+	setState: (state: ProfileState) => void;
+	changeProfileButton?: Button;
+	changePasswordButton?: Button;
 	logoutLink?: Text;
 }

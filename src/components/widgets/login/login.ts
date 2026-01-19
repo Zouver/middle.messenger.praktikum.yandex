@@ -1,4 +1,5 @@
 import {userApi} from "@/api/user.api.ts";
+import {Paths} from "@/app/paths.ts";
 import {router} from "@/app/router.ts";
 import {Component} from "@/lib/component";
 import { getFormData } from "@/lib/utils/form.ts";
@@ -13,7 +14,6 @@ import {loginTemplate} from "./login.template.ts";
 import type {LoginProps} from "./login.props.ts";
 
 import './login.css';
-import {Paths} from "@/app/paths.ts";
 
 
 export class Login extends Component<LoginProps> {

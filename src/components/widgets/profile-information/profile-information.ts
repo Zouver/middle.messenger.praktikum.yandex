@@ -28,7 +28,7 @@ export class ProfileInformation extends Component<ProfileInformationProps>{
 	private _loadUserInformations(){
 		userApi.request().then(user => {
 			const items: KeyValueItem[] = Object.entries(informations).map(([key, options]) => {
-				const _value = user[key as keyof User].toString();
+				const _value = String(user[key as keyof User]);
 
 				return new KeyValueItem({
 					key: options.title,

@@ -1,6 +1,6 @@
 export interface User {
-	avatar: string;
-	display_name: string;
+	avatar?: string;
+	display_name?: string;
 	email: string;
 	first_name: string;
 	id: number;
@@ -38,7 +38,7 @@ export interface Resource {
 export interface ChatType {
 	id: number;
 	title: string;
-	avatar?: string;
+	avatar: string | null;
 	unread_count: number;
 	created_by: number;
 	last_message?: LastMessage;

@@ -4,6 +4,7 @@ export const authFormTemplate = `
       {{#each inputs}}
         {{{ this }}}
       {{/each}}
+	    {{#if error}}{{{ error }}}{{/if}}
     </div>
     <div class="button-group">
       {{#each buttons}}

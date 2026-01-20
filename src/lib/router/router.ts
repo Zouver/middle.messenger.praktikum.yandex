@@ -1,63 +1,62 @@
-import {errorRoutes} from "@/routes.ts";
+import {Route} from "@lib/router/route.ts";
 
-import type {Route, RouterErrorHandlers} from "@lib/router/types.ts";
-
+import type {RouterErrorHandlers} from "@lib/router/types.ts";
 
 
 export class Router {
 	private routes: Route[] = [];
-	private errorRoutes: Partial<Record<404 | 500, string>> = {};
+	private history = window.history;
+	private rootQuery: string | null = null;
+	private readonly _errorRoutes: RouterErrorHandlers;
+	private _currentRoute: Route | null = null;
 
-	constructor(routes: Route[], errorHandler: RouterErrorHandlers) {
-		window.addEventListener("popstate", () => this.handleRoute());
-		document.addEventListener("click", this.handleLinkClick.bind(this));
-
-		routes.forEach((route: Route) => {
-			this.routes.push(route);
-		});
-
-		Object.entries(errorHandler).forEach(([key, route] ) => {
-			const _key = key as unknown as 404 | 500;
-			const _route = route as Route;
-			this.routes.push(_route);
-			this.errorRoutes[_key] = _route.path;
-		});
-
+	constructor(routes: Route[], errorRoutes: RouterErrorHandlers, rootQuery: string) {
+		this.routes = [...routes, ...Object.values(errorRoutes)];
+		this.history = window.history;
+		this._currentRoute = null;
+		this._errorRoutes = errorRoutes;
+		this.rootQuery = rootQuery;
 	}
 
-	ready(){
-		this.navigate(location.pathname);
+	public init(){
+		window.addEventListener("popstate", () => this._onRoute(location.pathname));
+		this._onRoute(location.pathname);
 	}
 
-	navigate(path: string) {
-		const route = this.routes.find(r => r.path === path);
-		const _path = route ? path : errorRoutes["404"].path;
-		history.pushState({}, "", _path);
-		this.handleRoute();
+	public getRoute(pathname: string) {
+		return this.routes.find(route => route.match(pathname));
 	}
 
-	private handleRoute() {
-		const current = location.pathname;
-		const route = this.routes.find(r => r.path === current);
-		document.title = route?.title || document.title;
-
-		if (route) {
-			route.handler();
-		} else {
-			console.warn("Route not found:", current);
+	public go(pathname: string) {
+		if (location.pathname !== pathname) {
+			this.history.pushState({}, "", pathname);
 		}
+		this._onRoute(pathname);
 	}
 
-	private handleLinkClick(e: MouseEvent) {
-		const target = e.target as HTMLElement;
+	public back() {
+		this.history.back();
+	}
 
-		if (target.tagName === "A") {
-			const href = (target as HTMLAnchorElement).getAttribute("href");
+	public forward() {
+		this.history.forward();
+	}
 
-			if (href && href.startsWith("/")) {
-				e.preventDefault();
-				this.navigate(href);
-			}
+	private _onRoute(pathname: string) {
+		const route: Route = (this.getRoute(pathname) || this._errorRoutes[404]) as Route;
+		this._currentRoute?.leave();
+
+		try {
+			route.getProtectedState().then(() => {
+				route.render(this.rootQuery!);
+				this._currentRoute = route;
+			}).catch((fallback: string) => {
+				this.go(fallback);
+			});
+		} catch (e) {
+			console.error(e);
+			this._errorRoutes[500].render(this.rootQuery!);
+			this._currentRoute = this._errorRoutes[500] as unknown as Route;
 		}
 	}
 }

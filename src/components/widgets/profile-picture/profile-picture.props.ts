@@ -1,8 +1,11 @@
 import {type BaseProps} from '@/lib/component';
-import {Text} from "@components/shared";
+import {Button, Input, Text} from "@components/shared";
 
 
 export interface ProfilePictureProps extends BaseProps{
-	changeAvatarText: Text;
+	changeAvatarText?: Text;
+	submitButton?: Button;
+	fileInput?: Input;
+	avatar?: string;
 }
 

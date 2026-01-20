@@ -1,13 +1,11 @@
+import {ErrorPage, type ErrorPageProps} from "@components/pages";
+import {Route} from "@lib/router/route.ts";
+
 export type RouteHandler = () => void;
 
-export interface Route {
-	path: string;
-	handler: RouteHandler;
-	title: string;
-}
-
 export interface RouterErrorHandlers {
-	404: Route
-	500: Route
+	404: Route<ErrorPageProps, ErrorPage>
+	500: Route<ErrorPageProps,ErrorPage>
 }
 
+export type ProtectedRouteCheck = () => Promise<boolean>

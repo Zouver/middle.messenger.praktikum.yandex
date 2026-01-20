@@ -1,4 +1,3 @@
-import {Component} from '@/lib/component';
 import {EventBus} from '@/lib/event-bus';
 
 import type {Events, Meta} from "@lib/component/types.ts";
@@ -13,7 +12,7 @@ export abstract class BaseComponent<TProps> {
 
 	public props!: TProps;
 	public events!: Events;
-	public children!: Record<string, Component | Component[]>;
+	public isMount: boolean = false;
 
 	protected _id!: string;
 	protected _eventBus!: EventBus;

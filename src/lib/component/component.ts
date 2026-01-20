@@ -9,6 +9,7 @@ import type {EventBusCallback} from "@lib/event-bus/types.ts";
 
 
 export class Component<TProps extends BaseProps = BaseProps> extends BaseComponent<TProps> {
+	isMount = false;
 	constructor(
 		tagName = "div",
 		props: TProps = {} as TProps,
@@ -17,15 +18,13 @@ export class Component<TProps extends BaseProps = BaseProps> extends BaseCompone
 	) {
 		super();
 
-		const {props: _props, children} = this._getChildren(props);
-		this.children = children;
-		this.props = this._makePropsProxy({..._props, __id: this._id });
+		this.props = this._makePropsProxy({...props, __id: this._id });
 		this.events = this.props.events || {};
 
 
 		this._id = makeUUID();
 		this._classNames = classNames;
-		this._meta = {tagName, props: _props, attributes, classNames};
+		this._meta = {tagName, props, attributes, classNames};
 		this._eventBus = new EventBus();
 		this._registerEvents(this._eventBus);
 
@@ -106,6 +105,7 @@ export class Component<TProps extends BaseProps = BaseProps> extends BaseCompone
 
 	private _componentDidMount(): void {
 		this.componentDidMount();
+		this.isMount = true;
 	}
 
 	private _componentDidUpdate(oldProps: TProps, newProps: TProps): void {
@@ -126,38 +126,40 @@ export class Component<TProps extends BaseProps = BaseProps> extends BaseCompone
 	}
 
 	public compile(template: string, props: TProps): DocumentFragment {
+
+		const {children} = this._getChildren(props);
+
+		// Variables for props and children templates
 		const propsAndStubs = { ...props };
 
-		Object.entries(this.children).forEach(([key, child]) => {
-			if (Array.isArray(child)) {
-				propsAndStubs[key as keyof TProps] = child.map(c => `<div data-id="${c._id}"></div>`) as unknown as TProps[keyof TProps];
-			} else {
-				propsAndStubs[key as keyof TProps] = `<div data-id="${child._id}"></div>` as TProps[keyof TProps];
-			}
+		// Generate templates for children
+		Object.entries(children).forEach(([key, child]) => {
+			propsAndStubs[key as keyof TProps] = (Array.isArray(child) ?
+				child.map(c =>`<div data-id="${c._id}"></div>`) :
+				`<div data-id="${child._id}"></div>`) as TProps[keyof TProps];
 		});
 
+		// Get fragment element and compile template
 		const fragment = this._createDocumentElement('template') as HTMLTemplateElement;
 		const fragmentTemplate = compile(template);
 		fragment.innerHTML = fragmentTemplate(propsAndStubs);
 
-		Object.entries(this.children).forEach(([key, child]) => {
-			if (Array.isArray(child)) {
-				child.forEach(c => {
-					const stub = fragment.content.querySelector(`[data-id="${c._id}"]`);
-					if (!stub) {
-						console.error(`Template syntax error: stub not found for child component with id ${c._id} in array "${key}"`);
-						return;
-					}
-					stub.replaceWith(c.getContent());
-				});
-			} else {
-				const stub = fragment.content.querySelector(`[data-id="${child._id}"]`);
+		// Replace children string template with HTML Element
+		Object.entries(children).forEach(([key, child]) => {
+			const _children: Component[] = Array.isArray(child) ? child : [child];
+
+			_children.forEach(c => {
+				const stub = fragment.content.querySelector(`[data-id="${c._id}"]`);
+
 				if (!stub) {
-					console.error(`Template syntax error: stub not found for child component with id ${child._id}`);
+					console.error(`Template syntax error: stub not found for child component with id ${c._id} in array "${key}"`);
 					return;
 				}
-				stub.replaceWith(child.getContent());
-			}
+
+				stub.replaceWith(c.getContent());
+				if(!c.isMount) c.dispatchComponentDidMount();
+			});
+
 		});
 
 		return fragment.content;
@@ -176,6 +178,11 @@ export class Component<TProps extends BaseProps = BaseProps> extends BaseCompone
 	public setProps(nextProps: Partial<TProps>): void {
 		if (!nextProps) return;
 		Object.assign(this.props, nextProps);
+	}
+
+	public updateProps(nextProps: Partial<TProps>): void {
+		if (!nextProps) return;
+		Object.assign(this.props, {...this.props, ...nextProps});
 	}
 
 	get element(): HTMLElement {
@@ -216,10 +223,12 @@ export class Component<TProps extends BaseProps = BaseProps> extends BaseCompone
 	}
 
 	public show(): void {
+		this.isMount = true;
 		this.getContent().style.display = "block";
 	}
 
 	public hide(): void {
+		this.isMount = false;
 		this.getContent().style.display = "none";
 	}
 }

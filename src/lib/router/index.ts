@@ -1,2 +1,3 @@
 export {Router} from "./router.ts";
-export type {Route, RouterErrorHandlers, RouteHandler} from "./types.ts";
+export {Route} from './route.ts';
+export type { RouterErrorHandlers, RouteHandler} from "./types.ts";

@@ -1,7 +1,11 @@
+import {userApi} from "@/api/user.api.ts";
+import {Paths} from "@/app/paths.ts";
+import {router} from "@/app/router.ts";
 import {Component} from "@/lib/component";
 import { getFormData } from "@/lib/utils/form.ts";
 import { minLength, required } from "@/lib/validator/validators.ts";
-import {Button, InputForm, TextHeading, TextLabel} from "@components/shared";
+import {Button, InputForm, TextHeading, TextLabel, Text} from "@components/shared";
+import {formValidate} from "@lib/validator/formValidate.ts";
 
 import {AuthForm} from "../auth-form";
 
@@ -41,25 +45,37 @@ export class Login extends Component<LoginProps> {
 
 		const buttons = props.buttons || [
 			new Button({text: "Авторизоваться", variant: "primary", type: "submit"}),
-			new Button({text: "Нет аккаунта?", variant: "transparent"})
+			new Button({text: "Нет аккаунта?", variant: "transparent", events: {
+				click: (e) => {
+					e.preventDefault();
+					router.go(Paths.SignUp);
+				}
+			}})
 		];
 
 		const onSubmit = (event: SubmitEvent) => {
 			event.preventDefault();
-			let isValid = true;
-			const data = getFormData(event.target as HTMLFormElement);
+			const data = getFormData<{login: string, password: string}>(event.target as HTMLFormElement);
 			console.log(data);
 
-			Object.entries(data).forEach(([key, value]) => {
-				const input =inputs.find(input => input.props.name === key) as InputForm;
-				isValid = input.validate(value as string);
-			});
-
+			const isValid = formValidate(data, inputs);
 			if(!isValid) return;
+
+			userApi.login(data.login, data.password).then(() => {
+				userApi.request().then(console.log);
+				console.log("Success login");
+				router.go(Paths.Messenger);
+			}).catch((xhr) => {
+				console.warn("Login failed: " + xhr?.response?.reason);
+				const authFormKey = Object.keys(this.props).find(key => key === 'authForm');
+				if(!authFormKey) return;
+				const authForm = this.props[authFormKey] as AuthForm;
+				console.log(authForm.props);
+				authForm.setProps({...authForm.props, error: new Text({text: xhr?.response?.reason || "Произошла ошибка", variant: "critical"})});
+			});
 		};
 
 		const authForm = props.authForm || new AuthForm({inputs, buttons, onSubmit});
-
 
 		super(
 			"div",

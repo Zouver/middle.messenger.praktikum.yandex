@@ -1,4 +1,4 @@
-export const getFormData = (form: HTMLFormElement) => {
+export const getFormData = <P>(form: HTMLFormElement): P => {
 	const formData = new FormData(form);
-	return Object.fromEntries(formData);
+	return Object.fromEntries(formData) as P;
 };

@@ -3,8 +3,10 @@ import {TextHeading} from "@components/shared";
 import {ProfileNav, ProfileActions, ProfilePicture, ProfileChangePassword, ProfileInformation} from "@components/widgets";
 
 
+export type ProfileState = "default" | "profile-change" | "password-change"
+
 export interface ProfilePageProps extends BaseProps{
-	state: "default" | "profile-change" | "password-change";
+	state: ProfileState;
 	isDefaultState?: boolean;
 	isChangePassword? : boolean;
 	profileNav?: ProfileNav;

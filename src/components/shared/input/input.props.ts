@@ -13,5 +13,6 @@ export interface InputProps extends BaseProps{
 	error?: string;
 	input?: Component;
 	validators?: ValidatorFn[]
+	accept?: string;
 }
 

@@ -5,5 +5,5 @@ export interface SelectedChatPanelProps extends BaseProps {
     attachButton?: ButtonIcon;
     input?: Input;
     sendButton?: ButtonIcon;
-    onSubmit?: (event: SubmitEvent) => void;
+		onSendMessage: (value: string) => void;
 }

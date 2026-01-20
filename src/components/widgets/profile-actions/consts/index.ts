@@ -1,3 +1,6 @@
+import {userApi} from "@/api/user.api.ts";
+import {Paths} from "@/app/paths.ts";
+import {router} from "@/app/router.ts";
 import {Text} from "@components/shared";
 
 export const changeProfileLinkDefault = new Text({
@@ -12,5 +15,12 @@ export const changePasswordLinkDefault = new Text({
 
 export const logoutLinkDefault = new Text({
 	text: "Выйти",
-	variant: "critical"
+	variant: "critical",
+	events: {
+		click: (event) => {
+			event.preventDefault();
+			userApi.logout();
+			router.go(Paths.SignIn);
+		}
+	}
 });

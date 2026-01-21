@@ -13,7 +13,8 @@
     "lint:fix": "eslint --fix . && stylelint --fix --color \"**/*.css\"",
     "test": "NODE_OPTIONS='--import tsx' mocha",
     "preview": "vite preview",
-    "start": "npm run build && npm run preview"
+    "start": "npm run build && npm run preview",
+    "prepare": "husky"
   },
   "dependencies": {
     "handlebars": "^4.7.8",
@@ -33,6 +34,7 @@
     "eslint-plugin-import": "^2.32.0",
     "global-jsdom": "^27.0.0",
     "globals": "^16.4.0",
+    "husky": "^9.1.7",
     "ignore-styles": "^5.0.1",
     "mocha": "^11.7.5",
     "sass-embedded": "^1.93.3",

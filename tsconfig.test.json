@@ -1,0 +1,13 @@
+{
+	"extends": "./tsconfig.app.json",
+	"compilerOptions": {
+		"target": "ES6",
+		"module": "CommonJS",
+		"moduleResolution": "Node",
+		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
+		"strict": true,
+		"types": ["mocha", "sinon"],
+		"noImplicitAny": false
+	},
+}

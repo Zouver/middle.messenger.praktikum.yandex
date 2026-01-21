@@ -49,7 +49,7 @@ export class HTTPTransport {
 		const isGet = method === METHODS.GET;
 
 		const isFormData = data instanceof FormData;
-		const isJson = !isFormData && contentType === "json";
+		const isJson = !isFormData && !isGet && contentType === "json";
 
 		let _url = this._getUrl(url);
 		let _data: XMLHttpRequestBodyInit| null = null;
@@ -66,12 +66,15 @@ export class HTTPTransport {
 				_url = buildQueryURL(_url, data);
 			}
 
-
-			_data = isFormData
-				? data
-				: (isJson && data)
-					? JSON.stringify(data)
-					: data as XMLHttpRequestBodyInit | null;
+			if(isFormData){
+				_data = data;
+			}
+			else if(isJson && data){
+				_data = JSON.stringify(data);
+			}
+			else if(!isGet){
+				_data = data as XMLHttpRequestBodyInit;
+			}
 
 			xhr.open(method, _url);
 

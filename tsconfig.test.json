@@ -10,4 +10,5 @@
 		"types": ["mocha", "sinon"],
 		"noImplicitAny": false
 	},
+	"include": ["src/**/*.test.ts"]
 }

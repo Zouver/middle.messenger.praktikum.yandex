@@ -1,0 +1,6 @@
+{
+	"require": ["mocha.setup.js"],
+	"spec": "src/**/*.test.ts",
+	"extension": ["ts"],
+	"reporter": "spec"
+}

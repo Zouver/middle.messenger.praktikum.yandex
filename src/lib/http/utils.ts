@@ -3,7 +3,7 @@ import {METHODS} from "@lib/http/consts.ts";
 import type {HTTPTransportOptions} from "@lib/http/types.ts";
 
 export const queryStringify = (data:  Record<string, string | number | boolean>) => {
-	if (typeof data !== 'object') {
+	if (typeof data !== 'object' || !data) {
 		throw new Error('Data must be object');
 	}
 
@@ -24,10 +24,11 @@ export const buildQueryURL = (
 
 
 export const isHTTPDict = (value: unknown): value is Record<string, string | number | boolean> => {
-	if (value !== null && typeof value === 'object') {
-		return Object.values(value).every((v) => ["string","boolean","number"].includes(typeof v));
+	if(!value || typeof value !== 'object' || Array.isArray(value)) {
+		return false;
 	}
-	return false;
+
+	return Object.values(value).every((v) => ["string","boolean","number"].includes(typeof v));
 };
 
 type getContentTypeUtil = (method: METHODS, headers: HTTPTransportOptions["headers"]) => string | null;

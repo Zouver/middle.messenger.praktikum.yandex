@@ -54,7 +54,6 @@ export class Router {
 				this.go(fallback);
 			});
 		} catch (e) {
-			console.error(e);
 			this._errorRoutes[500].render(this.rootQuery!);
 			this._currentRoute = this._errorRoutes[500] as unknown as Route;
 		}
